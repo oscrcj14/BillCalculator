@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Groupon!</string>
+    <string name="app_name">Groupon Bill Calculator</string>
+    <string name="error">Error</string>
+    <string name="invalid_integer">Only valid positive whole numbers are allowed for</string>
+    <string name="invalid_float">Only valid positive decimal numbers are allowed for</string> 
+    <string name="person">Person</string> 
+    <string name="disclaimer">This app is in no way affiliated with Groupon or any of its partners. If you like this app, try Social Pioneer. It\'s from the same developer.</string>
+    <string name="calculate">Calculate</string>
+</resources>

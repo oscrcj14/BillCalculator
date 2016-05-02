@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="TextLabelColor">#ffBBBBBB</color>
+    <color name="TextDetailColor">#ff112233</color>
+    <color name="TextTitleColor">#ffDEEEEF</color>
+    <dimen name="TextLabelSize">24sp</dimen>
+    <dimen name="TextTitleSize">34sp</dimen>
+    <dimen name="TextDetailSize">14sp</dimen>
+    <color name="FieldBackgroundColor">#ff3388cc</color>
+    <color name="TextButtonColor">#ff009901</color>
+    <item name="TextTypeface" type="integer">2</item>
+    <color name="VeilColor">#aaddffff</color>
+    <color name="BlankColor">#00000000</color>
+    <item name="LabelWeight" format="float" type="dimen">6</item>
+    <item name="TextWeight" type="dimen" format="float">4</item>
+    <item name="SubLabelWeight" type="dimen" format="float">7</item>
+    <color name="MainBackgroundColor">#FF222222</color>
+    <color name="StartGradientColor">#ff1155AA</color>
+    <color name="EndGradientColor">#ff3388CC</color>
+</resources>

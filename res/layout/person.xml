@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:orientation="vertical" android:id="@+id/person_root" android:layout_height="wrap_content" android:padding="4dp" android:layout_margin="4dp" android:background="@drawable/round_rect_gray">
+    <LinearLayout android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="match_parent" android:id="@+id/person_title_row">
+        <TextView android:layout_height="wrap_content" android:id="@+id/PersonTitleLabel" android:textSize="@dimen/TextLabelSize" android:text="Person 1" android:layout_width="wrap_content" android:padding="4dp" android:textColor="@color/TextLabelColor" android:background="@drawable/round_rect_blue"></TextView>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/person_entry_row" android:orientation="horizontal">
+    	   <TextView android:layout_width="0px" android:layout_height="wrap_content" android:layout_weight="@dimen/LabelWeight" android:id="@+id/PersonFoodCostLabel" android:text="Food Cost" android:textColor="@color/TextDetailColor" android:textSize="@dimen/TextDetailSize"></TextView>
+            <EditText android:layout_height="wrap_content"  android:layout_width="0px" android:textSize="@dimen/TextDetailSize" android:text="0" android:textColor="@color/TextDetailColor" android:layout_weight="@dimen/TextWeight" android:id="@+id/PersonFoodCostText" android:selectAllOnFocus="true"></EditText>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="match_parent" android:id="@+id/person_results_row1">
+        <TextView android:layout_height="wrap_content" android:layout_width="0px" android:id="@+id/FoodAmountOwedLabel" android:textColor="@color/TextDetailColor" android:textSize="@dimen/TextDetailSize" android:text="Amount Owed for Food" android:layout_weight="@dimen/SubLabelWeight"></TextView>
+        <TextView android:layout_height="wrap_content" android:layout_width="0px" android:id="@+id/FoodAmountOwedResult" android:text="0" android:layout_weight="@dimen/TextWeight" android:textColor="@color/TextDetailColor" android:textSize="@dimen/TextDetailSize"></TextView>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="match_parent" android:id="@+id/person_results_row2">
+        <TextView android:layout_height="wrap_content" android:layout_width="0px" android:id="@+id/GrouponAmountOwedLabel" android:textSize="@dimen/TextDetailSize" android:textColor="@color/TextDetailColor" android:text="Amount Owed for Groupon" android:layout_weight="@dimen/SubLabelWeight"></TextView>
+        <TextView android:layout_height="wrap_content" android:layout_weight="@dimen/TextWeight" android:layout_width="0px" android:text="0" android:id="@+id/GrouponAmountOwedResult" android:textColor="@color/TextDetailColor" android:textSize="@dimen/TextDetailSize"></TextView>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:orientation="horizontal" android:layout_width="match_parent" android:id="@+id/person_results_row3">
+        <TextView android:layout_height="wrap_content" android:layout_weight="@dimen/SubLabelWeight" android:textColor="@color/TextDetailColor" android:layout_width="0px" android:textSize="@dimen/TextDetailSize" android:id="@+id/TotalAmountOwedLabel" android:text="Total Amount Owed"></TextView>
+        <TextView android:layout_height="wrap_content" android:layout_weight="@dimen/TextWeight" android:textColor="@color/TextDetailColor" android:layout_width="0px" android:text="0" android:textSize="@dimen/TextDetailSize" android:id="@+id/TotalAmountOwedResult"></TextView>
+    </LinearLayout>
+</LinearLayout>
