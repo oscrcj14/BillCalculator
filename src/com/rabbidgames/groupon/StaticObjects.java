@@ -42,7 +42,6 @@ public class StaticObjects {
 		      dialog.cancel();
 		   }
 		});
-		//alertDialog.setIcon(R.drawable.shipbutton);
 		alertDialog.show();
 	}
 	

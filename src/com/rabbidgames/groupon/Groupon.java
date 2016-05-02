@@ -117,7 +117,6 @@ public class Groupon extends Activity
     private void PopulateIDs()
     {
     	m_MainLinearLayout = (LinearLayout)this.findViewById(R.id.MainLinearLayout);
-    	//m_SystemMessagesList = (ListView)this.findViewById(R.id.SystemMessagesListView);
     	m_DisclaimerText = (TextView)this.findViewById(R.id.DisclaimerText);
     	m_SizeOfGroupText = (EditText)this.findViewById(R.id.PartyNumberText);
         m_SizeOfGroupLabel = (TextView)this.findViewById(R.id.PartyNumberLabel);
