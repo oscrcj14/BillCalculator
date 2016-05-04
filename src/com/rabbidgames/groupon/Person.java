@@ -49,62 +49,62 @@ public class Person
 		m_TitleLabel = (TextView)m_PersonLinearLayout.findViewById(R.id.PersonTitleLabel);
 	}
 	
-	private void SetupListeners()
-	{
-		m_FoodCostText.setOnFocusChangeListener(new OnFocusChangeListener() {
-			@Override
-			public void onFocusChange(View view, boolean hasFocus) {
-				if(!hasFocus)
-				{
-					if(ValidateFields(false))
-					{
-						m_Owner.Calculate(Groupon.Fields.None);
-					}
-				}
+	 private void SetupListeners()
+	 {
+    	m_FoodCostText.setOnFocusChangeListener(new OnFocusChangeListener() {
+	          @Override
+	          public void onFocusChange(View view, boolean hasFocus) {
+	        	  if(!hasFocus)
+	        	  {
+        			  if(ValidateFields(false))
+        			  {
+        				  m_Owner.Calculate(Groupon.Fields.None);
+        			  }
+	        	  }
+	          }
+	    });
+	 }
+	 
+	 public boolean ValidateFields(boolean resurrect)
+	 {
+			//Food Cost
+			String tempStr = "";
+			
+			if(resurrect)
+			{
+				tempStr = Float.toString(m_Owner.m_Data.m_FoodCosts.get(m_Owner.m_PersonLayouts.size()));
 			}
-		});
-	}
+			else
+			{
+				tempStr = m_FoodCostText.getText().toString();
+			}
+			
+			float tempValue = StaticObjects.ValidatePositiveFloat(StaticObjects.StripSpecialNumberCharacters(tempStr),
+										m_FoodCostLabel.getText().toString(), m_Owner);
+			
+			if(tempValue < 0)
+			{
+				return false;
+			}
+			
+			m_FoodCost = tempValue;
+			m_FoodCostText.setText(StaticObjects.FormatCurrency(Float.toString(m_FoodCost)));
+	    	
+	    	return true;
+	 }
 	 
-	public boolean ValidateFields(boolean resurrect)
-	{
-		//Food Cost
-		String tempStr = "";
-		
-		if(resurrect)
-		{
-			tempStr = Float.toString(m_Owner.m_Data.m_FoodCosts.get(m_Owner.m_PersonLayouts.size()));
-		}
-		else
-		{
-			tempStr = m_FoodCostText.getText().toString();
-		}
-		
-		float tempValue = StaticObjects.ValidatePositiveFloat(StaticObjects.StripSpecialNumberCharacters(tempStr),
-									m_FoodCostLabel.getText().toString(), m_Owner);
-		
-		if(tempValue < 0)
-		{
-			return false;
-		}
-		
-		m_FoodCost = tempValue;
-		m_FoodCostText.setText(StaticObjects.FormatCurrency(Float.toString(m_FoodCost)));
-		
-		return true;
-	}
-	 
-	public void RecalculateFields(float actualBillTotal)
-	{
-		float foodAmountOwed = actualBillTotal * m_BillShare;
-		float grouponAmountOwed = m_Owner.m_Data.m_GrouponCost * m_BillShare;
-		float totalAmountOwed = foodAmountOwed + grouponAmountOwed;
+	 public void RecalculateFields(float actualBillTotal)
+	 {
+		 float foodAmountOwed = actualBillTotal * m_BillShare;
+		 float grouponAmountOwed = m_Owner.m_Data.m_GrouponCost * m_BillShare;
+		 float totalAmountOwed = foodAmountOwed + grouponAmountOwed;
 		 
-		foodAmountOwed = Math.round(foodAmountOwed * 100f) / 100f;
-		grouponAmountOwed = Math.round(grouponAmountOwed * 100f) / 100f;
-		totalAmountOwed = Math.round(totalAmountOwed * 100f) / 100f;
+		 foodAmountOwed = Math.round(foodAmountOwed * 100f) / 100f;
+		 grouponAmountOwed = Math.round(grouponAmountOwed * 100f) / 100f;
+		 totalAmountOwed = Math.round(totalAmountOwed * 100f) / 100f;
 		 
-		m_FoodOwedLabel.setText(StaticObjects.FormatCurrency(Float.toString(foodAmountOwed)));
-		m_GrouponOwedLabel.setText(StaticObjects.FormatCurrency(Float.toString(grouponAmountOwed)));
-		m_TotalOwedLabel.setText(StaticObjects.FormatCurrency(Float.toString(totalAmountOwed)));
-	}
+		 m_FoodOwedLabel.setText(StaticObjects.FormatCurrency(Float.toString(foodAmountOwed)));
+		 m_GrouponOwedLabel.setText(StaticObjects.FormatCurrency(Float.toString(grouponAmountOwed)));
+		 m_TotalOwedLabel.setText(StaticObjects.FormatCurrency(Float.toString(totalAmountOwed)));
+	 }
 }
