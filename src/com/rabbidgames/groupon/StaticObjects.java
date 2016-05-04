@@ -14,7 +14,8 @@ import android.widget.RelativeLayout;
 import android.content.*;
 import android.app.AlertDialog;
 
-public class StaticObjects {
+public class StaticObjects
+{
 	final static String SETTINGS_KEY = "GrouponBillCalculatorSettings";
 	
 	public static String FlurryKey()
@@ -49,82 +50,82 @@ public class StaticObjects {
 	{
 		Animation anim;
 		anim = new RotateAnimation(0, 0, 0, 0);
-    	anim.setRepeatMode(Animation.REVERSE);
-    	anim.setRepeatCount(Animation.INFINITE);
-    	anim.setDuration(10000L);
-    	anim.setInterpolator(new AccelerateDecelerateInterpolator());
-    	
-    	return anim;
+		anim.setRepeatMode(Animation.REVERSE);
+		anim.setRepeatCount(Animation.INFINITE);
+		anim.setDuration(10000L);
+		anim.setInterpolator(new AccelerateDecelerateInterpolator());
+		
+		return anim;
 	}
 	
-	 public static void ShowAd(Activity a, boolean bottomAlign)
-	 {
+	public static void ShowAd(Activity a, boolean bottomAlign)
+	{
 		RelativeLayout layout = new RelativeLayout(a);
-        a.addContentView(layout, new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
-
-        if(bottomAlign)
-        {
-        	layout.setVerticalGravity(Gravity.BOTTOM);
-        }
-        else
-        {
-        	layout.setVerticalGravity(Gravity.CENTER);
-        }
+		a.addContentView(layout, new LayoutParams(LayoutParams.MATCH_PARENT,LayoutParams.MATCH_PARENT));
+	
+		if(bottomAlign)
+		{
+			layout.setVerticalGravity(Gravity.BOTTOM);
+		}
+		else
+		{
+			layout.setVerticalGravity(Gravity.CENTER);
+		}
 
 		AdView myAd = new AdView(a, AdSize.BANNER,  StaticObjects.AdKey());
 		
-        myAd.setAdListener( new AdListener()
-        {
-        	public void onPresentScreen(Ad a)
-        	{
-        	}
-        	
-        	public void onDismissScreen(Ad a)
-        	{
-        	}
-        	
-    		public void onFailedToReceiveAd(Ad a, AdRequest.ErrorCode error)
-    		{
-    		}
-
-    		public void onReceiveAd(Ad a)
-    		{
-    		}
-    		
-    		public void onLeaveApplication(Ad a)
-    		{
-    		}
-        } );
-        
-        myAd.setBackgroundColor(0xff000000);
-        myAd.setVisibility(android.view.View.VISIBLE);
-        myAd.setGravity(Gravity.CENTER);
-        RelativeLayout.LayoutParams rl = (RelativeLayout.LayoutParams)myAd.getLayoutParams();
-        rl.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
-        myAd.setLayoutParams(rl);
-        
+		myAd.setAdListener( new AdListener()
+		{
+			public void onPresentScreen(Ad a)
+			{
+			}
+			
+			public void onDismissScreen(Ad a)
+			{
+			}
+			
+			public void onFailedToReceiveAd(Ad a, AdRequest.ErrorCode error)
+			{
+			}
+	
+			public void onReceiveAd(Ad a)
+			{
+			}
+			
+			public void onLeaveApplication(Ad a)
+			{
+			}
+		});
+		
+		myAd.setBackgroundColor(0xff000000);
+		myAd.setVisibility(android.view.View.VISIBLE);
+		myAd.setGravity(Gravity.CENTER);
+		RelativeLayout.LayoutParams rl = (RelativeLayout.LayoutParams)myAd.getLayoutParams();
+		rl.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+		myAd.setLayoutParams(rl);
+		
 		layout.addView(myAd);
 		
 		myAd.loadAd(new AdRequest());
-	 }
+	}
 	 
-	 public static String StripSpecialNumberCharacters(String str)
-	 {
+	public static String StripSpecialNumberCharacters(String str)
+	{
 		 str = str.replace("$", "");
 		 str = str.replace("%", "");
 		 
 		 return str;
-	 }
+	}
 	 
-	 public static String FormatPercent(String str)
-	 {
+	public static String FormatPercent(String str)
+	{
 		 if(!str.endsWith("%"))
 		 {
 			 str += "%";
 		 }
 		 
 		 return str;
-	 }
+	}
 	 
 	public static String FormatCurrency(String str)
 	{
